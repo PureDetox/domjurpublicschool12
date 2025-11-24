@@ -174,27 +174,48 @@ body {
     height: 100%;
     background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%);
     opacity: 0;
-    transition: opacity 1s ease-in-out;
+    transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1);
     display: flex;
     align-items: center;
     justify-content: center;
+    transform: scale(1.05);
 }
 
 .hero-slide.active {
     opacity: 1;
     z-index: 1;
+    transform: scale(1);
+    transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1), transform 1.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+
 .hero-slide:nth-child(1) {
-    background: linear-gradient(135deg, rgba(30, 58, 138, 0.9) 0%, rgba(59, 130, 246, 0.8) 100%), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1920&q=80') center/cover;
+    background: url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=2560&q=95&auto=format&fit=crop') center/cover;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
 }
 
 .hero-slide:nth-child(2) {
-    background: linear-gradient(135deg, rgba(5, 150, 105, 0.9) 0%, rgba(16, 185, 129, 0.8) 100%), url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=1920&q=80') center/cover;
+    background: url('https://images.unsplash.com/photo-1529390079861-591de354faf5?w=2560&q=95&auto=format&fit=crop') center/cover;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
 }
 
 .hero-slide:nth-child(3) {
-    background: linear-gradient(135deg, rgba(124, 58, 237, 0.9) 0%, rgba(167, 139, 250, 0.8) 100%), url('https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=1920&q=80') center/cover;
+    background: url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=2560&q=95&auto=format&fit=crop') center/cover;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+
+@media (max-width: 768px) {
+    .hero-slide:nth-child(1),
+    .hero-slide:nth-child(2),
+    .hero-slide:nth-child(3) {
+        background-attachment: scroll;
+    }
 }
 
 .hero-overlay {
@@ -203,7 +224,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.4);
     z-index: 1;
 }
 
@@ -486,7 +507,7 @@ body {
 .image-placeholder {
     width: 100%;
     height: 400px;
-    background: linear-gradient(135deg, var(--primary-color), var(--primary-light)), url('https://images.unsplash.com/photo-1562774053-701939374585?w=800&q=80') center/cover;
+    background: url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=1200&q=95&auto=format&fit=crop') center/cover;
     border-radius: 20px;
     display: flex;
     align-items: center;
@@ -495,17 +516,8 @@ body {
     transition: var(--transition);
     position: relative;
     overflow: hidden;
-}
-
-.image-placeholder::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, rgba(30, 58, 138, 0.8), rgba(59, 130, 246, 0.6));
-    z-index: 1;
+    background-size: cover;
+    background-position: center;
 }
 
 .image-placeholder:hover {
@@ -515,9 +527,9 @@ body {
 
 .image-placeholder i {
     font-size: 8rem;
-    color: rgba(255, 255, 255, 0.9);
+    color: rgba(255, 255, 255, 0.3);
     position: relative;
-    z-index: 2;
+    z-index: 1;
 }
 
 /* ============================================
@@ -888,13 +900,15 @@ body {
    Page Specific Styles
    ============================================ */
 .page-header {
-    background: linear-gradient(135deg, var(--primary-color), var(--primary-light)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1920&q=80') center/cover;
+    background: url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=2560&q=95&auto=format&fit=crop') center/cover;
     color: white;
     padding: 8rem 0 4rem;
     margin-top: 70px;
     text-align: center;
     position: relative;
     overflow: hidden;
+    background-size: cover;
+    background-position: center;
 }
 
 .page-header::before {
@@ -904,7 +918,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, rgba(30, 58, 138, 0.9), rgba(59, 130, 246, 0.8));
+    background: rgba(0, 0, 0, 0.5);
     z-index: 1;
 }
 
